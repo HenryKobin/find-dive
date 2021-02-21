@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/find-dive/static/css/main.cb451d92.chunk.css",
+    "main.js": "/find-dive/static/js/main.d2fb31c5.chunk.js",
+    "main.js.map": "/find-dive/static/js/main.d2fb31c5.chunk.js.map",
+    "runtime-main.js": "/find-dive/static/js/runtime-main.841e4f14.js",
+    "runtime-main.js.map": "/find-dive/static/js/runtime-main.841e4f14.js.map",
+    "static/css/2.10d08110.chunk.css": "/find-dive/static/css/2.10d08110.chunk.css",
+    "static/js/2.8aab9e55.chunk.js": "/find-dive/static/js/2.8aab9e55.chunk.js",
+    "static/js/2.8aab9e55.chunk.js.map": "/find-dive/static/js/2.8aab9e55.chunk.js.map",
+    "static/js/3.9821801f.chunk.js": "/find-dive/static/js/3.9821801f.chunk.js",
+    "static/js/3.9821801f.chunk.js.map": "/find-dive/static/js/3.9821801f.chunk.js.map",
+    "index.html": "/find-dive/index.html",
+    "static/css/2.10d08110.chunk.css.map": "/find-dive/static/css/2.10d08110.chunk.css.map",
+    "static/css/main.cb451d92.chunk.css.map": "/find-dive/static/css/main.cb451d92.chunk.css.map",
+    "static/js/2.8aab9e55.chunk.js.LICENSE.txt": "/find-dive/static/js/2.8aab9e55.chunk.js.LICENSE.txt",
+    "static/media/Scuba.03f9e405.svg": "/find-dive/static/media/Scuba.03f9e405.svg",
+    "static/media/semantic.min.css": "/find-dive/static/media/outline-icons.ddae9b1b.woff",
+    "static/media/scuba-diving.7a1c8f63.svg": "/find-dive/static/media/scuba-diving.7a1c8f63.svg",
+    "static/media/wave.17df03b1.svg": "/find-dive/static/media/wave.17df03b1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.841e4f14.js",
+    "static/css/2.10d08110.chunk.css",
+    "static/js/2.8aab9e55.chunk.js",
+    "static/css/main.cb451d92.chunk.css",
+    "static/js/main.d2fb31c5.chunk.js"
+  ]
+}

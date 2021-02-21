@@ -24,94 +24,17 @@ export const diveSlice = createSlice({
     setDiveSitesTest: (state, action) => {
       {/* used in development, divesites api needs https */}
       state.diveSites = [
-
-    {
-      "currents": null,
-      "distance": "17.04",
-      "hazards": null,
-      "lat": "33.9978",
-      "name": "Star of Scotland Shipwreck",
-      "water": null,
-      "marinelife": null,
-      "description": null,
-      "maxdepth": null,
-      "mindepth": null,
-      "predive": null,
-      "id": "23902",
-      "equipment": null,
-      "lng": "-118.5242"
-    },
-    {
-      "currents": null,
-      "distance": "19.09",
-      "hazards": null,
-      "lat": "34.0362",
-      "name": "Big Rock",
-      "water": null,
-      "marinelife": null,
-      "description": null,
-      "maxdepth": null,
-      "mindepth": null,
-      "predive": null,
-      "id": "21726",
-      "equipment": null,
-      "lng": "-118.6096"
-    },
-    {
-      "currents": null,
-      "distance": "20.28",
-      "hazards": null,
-      "lat": "33.9183",
-      "name": "The Pipe",
-      "water": null,
-      "marinelife": null,
-      "description": null,
-      "maxdepth": null,
-      "mindepth": null,
-      "predive": null,
-      "id": "24369",
-      "equipment": null,
-      "lng": "-118.4822"
-    },
-    {
-      "currents": null,
-      "distance": "21.29",
-      "hazards": null,
-      "lat": "33.8821",
-      "name": "Manhattan Beach",
-      "water": null,
-      "marinelife": null,
-      "description": null,
-      "maxdepth": null,
-      "mindepth": null,
-      "predive": null,
-      "id": "18317",
-      "equipment": null,
-      "lng": "-118.4130"
-    },
-    {
-      "currents": null,
-      "distance": "23.67",
-      "hazards": null,
-      "lat": "33.8448",
-      "name": "Redondo Breakwaters",
-      "water": null,
-      "marinelife": null,
-      "description": null,
-      "maxdepth": null,
-      "mindepth": null,
-      "predive": null,
-      "id": "17969",
-      "equipment": null,
-      "lng": "-118.4007"
-    }
-      ]
-    },
+{"currents":null,"distance":"2.41","hazards":null,"lat":"33.9978","name":"Star of Scotland Shipwreck","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"23902","equipment":null,"lng":"-118.5242"},{"currents":null,"distance":"6.88","hazards":null,"lat":"34.0362","name":"Big Rock","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"21726","equipment":null,"lng":"-118.6096"},{"currents":null,"distance":"7.01","hazards":null,"lat":"33.9183","name":"The Pipe","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"24369","equipment":null,"lng":"-118.4822"},{"currents":null,"distance":"10.49","hazards":null,"lat":"33.8821","name":"Manhattan Beach","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"18317","equipment":null,"lng":"-118.4130"},{"currents":null,"distance":"13.11","hazards":null,"lat":"34.0248","name":"Malibu Road","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"18283","equipment":null,"lng":"-118.7200"},{"currents":null,"distance":"13.14","hazards":null,"lat":"33.8448","name":"Redondo Breakwaters","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"17969","equipment":null,"lng":"-118.4007"},{"currents":null,"distance":"13.58","hazards":null,"lat":"33.8345","name":"Palawan Shipwreck","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"23901","equipment":null,"lng":"-118.4110"},{"currents":null,"distance":"13.81","hazards":null,"lat":"33.8375","name":"Veterans Park","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"21719","equipment":null,"lng":"-118.3915"},{"currents":null,"distance":"13.82","hazards":null,"lat":"33.8376","name":"Veteran’s Park","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"23375","equipment":null,"lng":"-118.3910"},{"currents":null,"distance":"13.88","hazards":null,"lat":"33.8362","name":"Redondo Submarine Canyon","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"17978","equipment":null,"lng":"-118.3918"},{"currents":null,"distance":"14.10","hazards":null,"lat":"33.8324","name":"Old Pier #3","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"23933","equipment":null,"lng":"-118.3933"},{"currents":null,"distance":"14.48","hazards":null,"lat":"33.8269","name":"Redondo Beach","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"18116","equipment":null,"lng":"-118.3919"},{"currents":null,"distance":"14.51","hazards":null,"lat":"33.8261","name":"Haggerty's","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"18243","equipment":null,"lng":"-118.3928"},{"currents":null,"distance":"15.86","hazards":null,"lat":"34.0234","name":"Geoffreys Point","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"18071","equipment":null,"lng":"-118.7680"},{"currents":null,"distance":"15.86","hazards":null,"lat":"33.8012","name":"Flat Rocks","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"17409","equipment":null,"lng":"-118.4054"},{"currents":null,"distance":"15.87","hazards":null,"lat":"33.8029","name":"Malaga Cove","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"21720","equipment":null,"lng":"-118.3990"},{"currents":null,"distance":"15.89","hazards":null,"lat":"33.8039","name":"Rat Beach","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"18140","equipment":null,"lng":"-118.3950"},{"currents":null,"distance":"15.90","hazards":null,"lat":"33.8025","name":"Malga Cove","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"17817","equipment":null,"lng":"-118.3988"},{"currents":null,"distance":"16.03","hazards":null,"lat":"33.7969","name":"Flat Rock Palos Verdes","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"24254","equipment":null,"lng":"-118.4124"},{"currents":null,"distance":"16.09","hazards":null,"lat":"33.7970","name":"Flat Rock","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"21723","equipment":null,"lng":"-118.4082"},{"currents":null,"distance":"16.44","hazards":null,"lat":"33.7912","name":"Lobster Spot South of Flat Rock","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"24568","equipment":null,"lng":"-118.4103"},{"currents":null,"distance":"17.27","hazards":null,"lat":"33.7750","name":"SS Dominator Wreck (Rocky Point)","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"24458","equipment":null,"lng":"-118.4288"},{"currents":null,"distance":"17.33","hazards":null,"lat":"33.7741","name":"Dominator S.S Wreck","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"17966","equipment":null,"lng":"-118.4284"},{"currents":null,"distance":"18.00","hazards":null,"lat":"33.7653","name":"Honeymoon Cove","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"24311","equipment":null,"lng":"-118.4222"},{"currents":null,"distance":"18.26","hazards":null,"lat":"33.7621","name":"Christmas Tree Cove","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"21724","equipment":null,"lng":"-118.4187"},{"currents":null,"distance":"18.29","hazards":null,"lat":"34.0019","name":"Point Dume","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"21727","equipment":null,"lng":"-118.8098"},{"currents":null,"distance":"18.51","hazards":null,"lat":"34.0053","name":"Westward Beach","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"17019","equipment":null,"lng":"-118.8139"},{"currents":null,"distance":"18.93","hazards":null,"lat":"34.0125","name":"Point Dume Pinnacles","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"17155","equipment":null,"lng":"-118.8216"},{"currents":null,"distance":"19.85","hazards":null,"lat":"33.7417","name":"Point Vincente","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"17820","equipment":null,"lng":"-118.4030"},{"currents":null,"distance":"20.02","hazards":null,"lat":"33.7391","name":"Cadiac Hill","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"23931","equipment":null,"lng":"-118.4036"},{"currents":null,"distance":"20.12","hazards":null,"lat":"33.7434","name":"Abalone Cove","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"17823","equipment":null,"lng":"-118.3796"},{"currents":null,"distance":"20.22","hazards":null,"lat":"33.7380","name":"Wreck Of The Salsilito","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"16879","equipment":null,"lng":"-118.3949"},{"currents":null,"distance":"20.27","hazards":null,"lat":"33.7373","name":"Old Marine Land","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"18215","equipment":null,"lng":"-118.3943"},{"currents":null,"distance":"20.31","hazards":null,"lat":"33.7360","name":"Marineland Reef","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"18206","equipment":null,"lng":"-118.3979"},{"currents":null,"distance":"20.33","hazards":null,"lat":"33.7358","name":"Old Marineland","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"21721","equipment":null,"lng":"-118.3969"},{"currents":null,"distance":"20.73","hazards":null,"lat":"33.7373","name":"Archery Range","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"16318","equipment":null,"lng":"-118.3681"},{"currents":null,"distance":"21.34","hazards":null,"lat":"34.0344","name":"Broad Beach","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"17313","equipment":null,"lng":"-118.8634"},{"currents":null,"distance":"21.63","hazards":null,"lat":"33.7276","name":"American Flag (Trump National Golf Course)","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"23955","equipment":null,"lng":"-118.3547"},{"currents":null,"distance":"22.93","hazards":null,"lat":"33.7183","name":"Royal Palm State Beach","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"22659","equipment":null,"lng":"-118.3234"},{"currents":null,"distance":"23.25","hazards":null,"lat":"33.7152","name":"White Point","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"21716","equipment":null,"lng":"-118.3181"},{"currents":null,"distance":"24.42","hazards":null,"lat":"33.7113","name":"Cabrillo Beach","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"17205","equipment":null,"lng":"-118.2828"},{"currents":null,"distance":"24.56","hazards":null,"lat":"34.0431","name":"Nicholas Canyon","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"18188","equipment":null,"lng":"-118.9191"},{"currents":null,"distance":"25.18","hazards":null,"lat":"33.7000","name":"Point Fermin","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"17075","equipment":null,"lng":"-118.2800"},{"currents":null,"distance":"25.31","hazards":null,"lat":"34.0449","name":"Leo Carillo State Beach","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"21728","equipment":null,"lng":"-118.9321"},{"currents":null,"distance":"25.42","hazards":null,"lat":"34.0440","name":"Leo Carrillo","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"17814","equipment":null,"lng":"-118.9342"},{"currents":null,"distance":"25.49","hazards":null,"lat":"34.0428","name":"Leo Carillo","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"18281","equipment":null,"lng":"-118.9355"},{"currents":null,"distance":"27.14","hazards":null,"lat":"34.0515","name":"Harrison�s Reef","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"17811","equipment":null,"lng":"-118.9636"},{"currents":null,"distance":"27.16","hazards":null,"lat":"34.0208","name":"Staircase","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"17467","equipment":null,"lng":"-118.9655"},{"currents":null,"distance":"27.74","hazards":null,"lat":"33.6712","name":"Minesweeper Wreck","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"18221","equipment":null,"lng":"-118.2507"},{"currents":null,"distance":"27.99","hazards":null,"lat":"33.6146","name":"Blue Cavern","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"17099","equipment":null,"lng":"-118.4766"},{"currents":null,"distance":"28.53","hazards":null,"lat":"34.0626","name":"Deer Creek Road","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"21729","equipment":null,"lng":"-118.9867"},{"currents":null,"distance":"28.53","hazards":null,"lat":"33.6678","name":"USS Moody Wreck","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"16376","equipment":null,"lng":"-118.2307"},{"currents":null,"distance":"28.58","hazards":null,"lat":"34.0613","name":"Deer Creek","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"17808","equipment":null,"lng":"-118.9877"},{"currents":null,"distance":"28.83","hazards":null,"lat":"33.6042","name":"Pebbly Beach","water":null,"marinelife":null,"description":null,"maxdepth":null,"mindepth":null,"predive":null,"id":"18044","equipment":null,"lng":"-118.5408"}
+]
+},
 
     setDiveSites: (state, action) => {
       const url = `http://api.divesites.com/?mode=sites&lat=${action.payload['lat']}&lng=${action.payload['lon']}&dist=25 `
-      axios.get(url)
-      .then(function (response) {
+      console.log(url)
+      axios({
+      method:'get',
+      headers: { 'Content-Type': 'application/json'},
+      url: url,}).then(function (response) {
         console.log(response.data)
                 state.diveSites = [response.data.sites]
       })

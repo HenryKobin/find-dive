@@ -4,9 +4,9 @@ import L from 'leaflet'
 import WaveSVG from './assets/wave.svg'
 import ScubaDiverSVG from './assets/scuba-diving.svg'
 import ScubaSVG from './assets/Scuba.svg'
-
-const diveIcon = L.icon({
-    iconUrl: ScubaDiverSVG,
+import HomeSVG from './assets/home.svg'
+const homeIcon = L.icon({
+    iconUrl: HomeSVG,
     iconSize: [64,64],
     iconAnchor: [32, 64],
     popupAnchor: [-22, -64],
@@ -34,12 +34,12 @@ const LeafMap = (props) => {
         <TileLayer
          url= {props.url}
          attribution='&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'/>
-        <Marker position={props.diverLocationJSON}>
+        <Marker position={props.diverLocationJSON} icon={homeIcon}>
         </Marker>
         {props.diveSites.map((site)=> (
           <Marker
           position={[site.lat,site.lng]}
-          icon={diveIcon}>
+          >
           <Popup>
           <Card.Header><strong>{site.name}</strong></Card.Header>
           <Card.Meta>{site.distance} miles away</Card.Meta>

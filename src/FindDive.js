@@ -11,7 +11,7 @@ import {
 } from './DiverReducer'
 import { useSelector, useDispatch } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify';
-import { Image, Grid, Card, Header, Icon, Input, Button, Modal, Menu, Sidebar, Segment, Form } from 'semantic-ui-react'
+import { List, Image, Grid, Card, Header, Icon, Input, Button, Modal, Menu, Sidebar, Segment, Form } from 'semantic-ui-react'
 import 'react-toastify/dist/ReactToastify.css';
 import LeafMap from './LeafMap'
 import WaveSVG from './assets/wave.svg'
@@ -34,7 +34,19 @@ const FindDive = (props) => {
     if(e.target.value.length >= 3)
     setDiverLocationLoad(false)
     diveDispatch(setCurrentLocationString(e.target.value))
+
   }
+
+  const onFakeSubmit = (e) => {
+    diveDispatch(setCurrentLocationString('El Segundo, California'))
+  diveDispatch(setDiveSitesTest())
+  setDiverLocationJSON([33.9192, -118.4165])
+
+  setDiverLocationLoad(true)
+  setDiveSitesLoaded(true)
+  }
+
+
   const onFormSubmit = (e) => {
     const url = `https://us1.locationiq.com/v1/search.php?key=${POSITION_API_KEY}&q=${diverLocation}&format=json`
     axios.get(url)
@@ -80,7 +92,7 @@ const FindDive = (props) => {
     <Menu vertical fixed={'right'} id={'searchMenu'}>
 
     <Header as='h2' icon textAlign='center'>
-      <Image src={WaveSVG} style={{color:"#82aa9f"}} />
+      <Image href=" "  src={WaveSVG} style={{color:"#82aa9f"}} />
       FindDive
     </Header>
 
@@ -102,7 +114,7 @@ const FindDive = (props) => {
     {
       diverLocationLoaded ?
       <>
-      <Menu.Item header>{diveSites.length} Dive sites within 25 miles of {diverLocation}.</Menu.Item>
+      <Menu.Item header>{diveSites.length} Dive sites within 30 miles of {diverLocation}.</Menu.Item>
       <Menu.Item id='diveSiteList'>
       <Card.Group>
         {diveSites.length > 0 ? diveSites.map((site) => (
@@ -129,7 +141,26 @@ const FindDive = (props) => {
     </Card.Group>
     </Menu.Item>
     </>
-      : <Menu.Item header>Enter a location above to get started.</Menu.Item>
+      : <Menu.Item >
+      <b><u>Please Note</u> </b><br/><br/>
+      DiveSites API (Which powers the search functionality)
+      needs to upgrade to HTTPS.<br/> <br/> Until then, search functionality does not work.
+      <br/> <br/>Click <b> <a href="#" onClick={onFakeSubmit}>here</a> </b> to simulate an API call.
+      <br/><hr/>
+      <b>To do / planned features</b><br/>
+      <ul>
+      <li>User signup</li>
+      <li>User profiles</li>
+      <li>Dive logging</li>
+      <li>Add dive sites</li>
+      <li>Rate dive sites</li>
+      <li>Store dive sites in DB</li>
+      <li>Show diveshops on map</li>
+      <li>Add commenting on dive sites</li>
+
+      </ul>
+
+      </Menu.Item>
     }
     </Menu>
     <ToastContainer

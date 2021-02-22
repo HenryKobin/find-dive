@@ -46,3 +46,4 @@
 z-index: 200000;
 }
 #noMap{background-color:#82aa9f;height:100vh}
+#locationComments{overflow-y: scroll ; height:40vh}

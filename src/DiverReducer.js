@@ -1,8 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 const axios = require('axios')
 
-const POSITION_API_KEY = "553a4010066e95eb55e4b8de0df0f33b"
-
 export const diveSlice = createSlice({
   name: 'diver_config',
   initialState: {

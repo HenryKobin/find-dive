@@ -7,7 +7,10 @@ import {
       getCurrentLocationJSON,
       setDiveSites,
       getDiveSites,
-      setDiveSitesTest
+      setFocusedSite,
+      getFocusedSite,
+      setDiveSiteVis,
+      getSiteDetailVis
 } from './DiverReducer'
 import { useSelector, useDispatch } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify';
@@ -16,15 +19,19 @@ import 'react-toastify/dist/ReactToastify.css';
 import LeafMap from './LeafMap'
 import WaveSVG from './assets/wave.svg'
 import ScubaSVG from './assets/Scuba.svg'
+import LobsterSVG from './assets/Lobster.svg'
 
 const axios = require('axios')
 const POSITION_API_KEY = "pk.d9b763aa8806116fcfb34720875e940e"
 const MAP_TILE_URL = 'https://{s}.tile.thunderforest.com/mobile-atlas/{z}/{x}/{y}.png?apikey=2b0938cd5adc4f70b1891708f2c31b8a';
 
 const FindDive = (props) => {
+  const [locationDetailVisible, setLocationDetailVisable] = useState(false);
+  const [focusedLocation, setFocusedLocation] = useState(null);
   const diveSitesList = []
   const diveDispatch = useDispatch()
   const diverLocation = useSelector(getCurrentLocationString)
+  const diveLocationJSON = useSelector(getCurrentLocationJSON)
   const diveSites = useSelector(getDiveSites)
   const [diverLocationJSON, setDiverLocationJSON] = useState(null)
   const [diverLocationLoaded, setDiverLocationLoad] = useState(null)
@@ -37,46 +44,58 @@ const FindDive = (props) => {
 
   }
 
-  const onFakeSubmit = (e) => {
-    diveDispatch(setCurrentLocationString('El Segundo, California'))
-  diveDispatch(setDiveSitesTest())
-  setDiverLocationJSON([33.9192, -118.4165])
-
-  setDiverLocationLoad(true)
-  setDiveSitesLoaded(true)
+  function viewSite(site){
+    setTimeout(function(){
+      diveDispatch(setFocusedSite(site));
+      diveDispatch(setDiveSiteVis(true));
+    }, 500);
   }
 
 
   const onFormSubmit = (e) => {
-    const url = `https://us1.locationiq.com/v1/search.php?key=${POSITION_API_KEY}&q=${diverLocation}&format=json`
-    axios.get(url)
-    .then(function (response) {
-      setDiverLocationJSON([response.data[0]['lat'],response.data[0]['lon']])
-      diveDispatch(setCurrentLocationJSON(response.data[0]))
-      diveDispatch(setDiveSites(response.data[0]))
-      setDiverLocationLoad(true)
-      setDiveSitesLoaded(true)
-    }).catch(function (error) {
-    if (error.response) {
-      // Request made and server responded
-      toast.error(' Please try again momentarily.', {
-      position: "top-right",
-      autoClose: 1500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: true,
-      progress: undefined,
-      });
-    } else if (error.request) {
-      // The request was made but no response was received
-      console.log(error.request);
-    } else {
-      // Something happened in setting up the request that triggered an Error
-      console.log('Error', error.message);
-    }
+          const url = `https://henrykobin.pythonanywhere.com/find-location/${diverLocation}`
+          axios.get(url)
+              .then(function(response) {
+                  setDiverLocationJSON([response.data['location'][0]['lat'], response.data['location'][0]['lon']])
+                  diveDispatch(setCurrentLocationJSON(response.data['location'][0]))
+                  const url = `https://henrykobin.pythonanywhere.com/find-sites/${response.data['location'][0]['lat']}/${response.data['location'][0]['lon']}`
+                  const options = {
+                      method: 'GET'
+                  }
+                  fetch(url, options)
+                      .then(response => response.json())
+                      .then(data => {
+                          console.log(data)
+                          diveDispatch(setDiveSites(data.sites));
+                          setDiverLocationLoad(true);
+                          setDiveSitesLoaded(true);
 
-  });
+                      })
+                      .catch(function(error) {
+                          console.log(error);
+                      })
+
+              }).catch(function(error) {
+                  if (error.response) {
+                      // Request made and server responded
+                      toast.error(' Please try again momentarily.', {
+                          position: "top-right",
+                          autoClose: 1500,
+                          hideProgressBar: false,
+                          closeOnClick: true,
+                          pauseOnHover: false,
+                          draggable: true,
+                          progress: undefined,
+                      });
+                  } else if (error.request) {
+                      // The request was made but no response was received
+                      console.log(error.request);
+                  } else {
+                      // Something happened in setting up the request that triggered an Error
+                      console.log('Error', error.message);
+                  }
+
+              });
 
   }
 
@@ -114,11 +133,11 @@ const FindDive = (props) => {
     {
       diverLocationLoaded ?
       <>
-      <Menu.Item header>{diveSites.length} Dive sites within 30 miles of {diverLocation}.</Menu.Item>
+      <Menu.Item header>{diveSites.length} Dive sites within 25 miles of {diverLocation}.</Menu.Item>
       <Menu.Item id='diveSiteList'>
       <Card.Group>
         {diveSites.length > 0 ? diveSites.map((site) => (
-        <Card color={'brown'}>
+        <Card color={'brown'} onClick={() => viewSite(site)}>
           <Card.Content>
             <Image
               floated='right'
@@ -142,25 +161,15 @@ const FindDive = (props) => {
     </Menu.Item>
     </>
       : <Menu.Item >
-      <b><u>Please Note</u> </b><br/><br/>
-      DiveSites API (Which powers the search functionality)
-      needs to upgrade to HTTPS.<br/> <br/> Until then, search functionality does not work.
-      <br/> <br/>Click <b> <a href="#" onClick={onFakeSubmit}>here</a> </b> to simulate an API call.
-      <br/><hr/>
-      <b>To do / planned features</b><br/>
-      <ul>
-      <li>User signup</li>
-      <li>User profiles</li>
-      <li>Dive logging</li>
-      <li>Add dive sites</li>
-      <li>Rate dive sites</li>
-      <li>Store dive sites in DB</li>
-      <li>Show diveshops on map</li>
-      <li>Add commenting on dive sites</li>
+<br/><br/>
+      <Image src={LobsterSVG}/>
 
-      </ul>
+      <Header as='h5' color='grey'>
+      Dive site data provided by <a target="_blank" href="http://divesites.com">DiveSites.com API </a>.
+      </Header>
 
       </Menu.Item>
+
     }
     </Menu>
     <ToastContainer
